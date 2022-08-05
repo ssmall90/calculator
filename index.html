@@ -5,47 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <table>
-            <tr>
-                <td colspan="3"><input type="text" class="displayBox" id="result" disabled ></td>
-                <td colspan="1"><input type="button" value="C" onclick="clearDisplay()"></td>
-            </tr>
+    <div class="calcBody">   
+        <div class="px-8 py-8 ">
+            <div class="flex mb-1 justify-end">
+                <div class="output">
+                    <div class="previousNumber"></div>
+                    <div class="currentNumber"></div>
+                </div>
+                <button class="clear">
+                    AC
+                </button>
+            </div>
+            <div class="flex mb-1">
+                <button class="number">7</button>
+                <button class="number">8</button>
+                <button class="number">9</button>
+                <button class="operator">/</button>
+            </div>
+            <div class="flex mb-1">
+                <button class="number">4</button>
+                <button class="number">5</button>
+                <button class="number">6</button>
+                <button class="operator">x</button>
+            </div>
+            <div class="flex mb-1">
+                <button class="number">1</button>
+                <button class="number">2</button>
+                <button class="number">3</button>
+                <button class="operator">+</button>
+            </div>
+            <div class="flex mb-1">
+                <button class="decimal">.</button>
+                <button class="number">0</button>
+                <button class="equals">=</button>
+                <button class="operator">-</button>
+            </div>
+        </div>
+    </div>
 
-            <tr class="firstRow">
-                <td><input id="b1"  type="button" value="1" style="width:100%"onclick="display('1')"></td>
-                <td><input id="b2" type="button" value="2" style="width:100%"onclick="display('2')"></td>
-                <td><input id="b3" type="button" value="3" style="width:100%"onclick="display('3')"></td>
-                <td><input id="plus" type="button" value="+" style="width:100%"onclick="display('+')"></td>
-            </tr>
-
-            <tr class="secondRow">
-                <td><input id="b4" type="button" value="4" style="width:100%"onclick="display('4')"></td>
-                <td><input id="b5" type="button" value="5" style="width:100%"onclick="display('5')"></td>
-                <td><input id="b6" type="button" value="6" style="width:100%"onclick="display('6')"></td>
-                <td><input id="minus" type="button" value="-" style="width:100%"onclick="display('-')"></td>
-            </tr>
-
-            <tr class="thirdRow">
-                <td><input id="b7" type="button" value="7" style="width:100%"onclick="display('7')"></td>
-                <td><input id="b8" type="button" value="8" style="width:100%"onclick="display('8')"></td>
-                <td><input id="b9" type="button" value="9" style="width:100%"onclick="display('9')"></td>
-                <td><input id="times" type="button" value="x" style="width:100%"onclick="display('x')"></td>
-            </tr>
-
-            <tr class="fourthRow">
-                <td><input type="button" value="." style="width:100%"onclick="display('.')"></td>
-                <td><input id="b0" type="button" value="0" style="width:100%"onclick="display('0')"></td>
-                <td><input type="button" value="=" style="width:100%"onclick="display('=')"></td>
-                <td><input id="divide" type="button" value="/" style="width:100%"onclick="display('/')"></td>
-            </tr>
-    </table>
-        
 
 
-    
+
 <script src="calculator.js"></script>
+<script src="addStyles.js"></script>
 </body>
 </html>
