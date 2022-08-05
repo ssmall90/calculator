@@ -44,10 +44,9 @@ operators.forEach((btn) => {
 function handleOperators(op) {
     operator = op;
     previousNum = currentNum;
-    previousDisplayNumber.textContent = previousNum ;
+    previousDisplayNumber.textContent = previousNum + '' + operator;
     currentNum = '';
     currentDisplayNumber.textContent = '';
-    
 }
 
 function calculate () {
@@ -61,21 +60,30 @@ function calculate () {
     } else if (operator === 'x') {
         previousNum = previousNum * currentNum
     } else if (operator === '/') {
+        if (currentNum <= 0) {
+            previousNum = 'ERRROR'
+            return;
+        }
         previousNum = previousNum / currentNum
     }
-
-    //previousNum = previousNum.toString();
     previousNum = roundNumber(previousNum)
-    previousDisplayNumber.textContent = '';
-    currentDisplayNumber.textContent = previousNum;
-   
+    previousNum =previousNum.toString()
+    displayScreen();
+}
 
+function displayScreen () {
+    previousDisplayNumber.textContent = ''
+    operator = ''
+    if(previousNum.length <= 11) {
+        currentDisplayNumber.textContent = previousNum
+    } else {currentDisplayNumber.textContent = previousNum.slice(0,11) + '...'}
 }
 
 function clearScreen () {
     currentNum = ''
     previousNum = ''
-    currentDisplayNumber.textContent = ''
+    operator = ''
+    currentDisplayNumber.textContent = '0'
     previousDisplayNumber.textContent = ''
 }
 
